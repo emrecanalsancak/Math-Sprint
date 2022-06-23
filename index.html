@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Sprint Game</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="game-container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Math Sprint Game</h1>
+    </div>
+    <!-- Splash Page -->
+    <div class="card" id="splash-page">
+      <form id="start-form">
+        <div class="selection-container" id="amount-select">
+          <!-- 10 questions radio input -->
+          <div class="radio-container">
+            <label for="value-10">10 Questions</label>
+            <input class="amount-input" name="questions" type="radio" id="value-10" value="10"></input>
+            <span class="best-score">
+              <span>Best Score</span>
+              <span class="best-score-value"></span>
+            </span>
+          </div>
+          <div class="radio-container">
+            <label for="value-25">25 Questions</label>
+            <input class="amount-input" name="questions" type="radio" id="value-25" value="25"></input>
+            <span class="best-score">
+              <span>Best Score</span>
+              <span class="best-score-value"></span>
+            </span>
+          </div>
+          <div class="radio-container">
+            <label for="value-50">50 Questions</label>
+            <input class="amount-input" name="questions" type="radio" id="value-50" value="50"></input>
+            <span class="best-score">
+              <span>Best Score</span>
+              <span class="best-score-value"></span>
+            </span>
+          </div>
+          <div class="radio-container">
+            <label for="value-99">99 Questions</label>
+            <input class="amount-input" name="questions" type="radio" id="value-99" value="99"></input>
+            <span class="best-score">
+              <span>Best Score</span>
+              <span class="best-score-value"></span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- <div class="selection-continer" id="equation-select" hidden>
+          <div class="eq-select-header">
+              <h2>Choose an equation</h2>
+            </div>
+          <div class="equation-radio-container">
+            <label for="sum">Addition +</label>
+            <input class="equation-input" type="radio" name="equations" id="sum" value="sum">
+          </div>
+          <div class="equation-radio-container">
+            <label for="subtract">Subtraction -</label>
+            <input class="equation-input" type="radio" name="equations" id="subtract" value="subtract">
+          </div>
+          <div class="equation-radio-container">
+            <label for="multiply">Multiplication *</label>
+            <input class="equation-input" type="radio" name="equations" id="multiply" value="multiply">
+          </div>
+          <div class="equation-radio-container">
+            <label for="divide">Division /</label>
+            <input class="equation-input" type="radio" name="equations" id="divide" value="divide">
+          </div>
+        </div> -->
+
+        <div class="selection-footer">
+          <button type="submit" id="next-button" class="start">NEXT</button>
+        </div>
+      </form>
+
+      <form id="equation-form" hidden>
+        <div class="selection-continer" id="equation-select">
+          <!-- <div class="eq-select-header">
+              <h2>Choose an equation</h2>
+            </div> -->
+          <div class="equation-radio-container">
+            <label for="sum">Addition +</label>
+            <input class="equation-input" type="radio" name="equations" id="sum" value="+">
+          </div>
+          <div class="equation-radio-container">
+            <label for="subtract">Subtraction -</label>
+            <input class="equation-input" type="radio" name="equations" id="subtract" value="-">
+          </div>
+          <div class="equation-radio-container">
+            <label for="multiply">Multiplication *</label>
+            <input class="equation-input" type="radio" name="equations" id="multiply" value="*">
+          </div>
+          <div class="equation-radio-container">
+            <label for="divide">Division /</label>
+            <input class="equation-input" type="radio" name="equations" id="divide" value="/">
+          </div>
+        </div>
+
+        <div class="selection-footer">
+          <button id="start-button" class="start" type="submit" hidden>Start Round</button>
+        </div>
+
+      </form>
+
+    </div>
+    <!-- Countdown Page -->
+    <div class="card" id="countdown-page">
+      <h1 class="countdown">3</h1>
+    </div>
+
+    <!-- Game Page -->
+    <div class="card" id="game-page" hidden>
+      <div class="item-container"></div>
+
+      <!-- Right - Wrong Buttons -->
+      <div class="item-footer">
+        <button class="wrong" onclick="select(false)">Wrong</button>
+        <button class="right" onclick="select(true)">Right</button>
+      </div>
+    </div>
+
+    <!-- Score Page -->
+    <div class="card" id="score-page" hidden>
+      <div class="score-container">
+        <h1 class="title">Your Time</h1>
+        <h1 class="final-time"></h1>
+        <h1 class="base-time"></h1>
+        <h1 class="penalty-time"></h1>
+      </div>
+
+      <!-- Play again button -->
+      <div class="score-footer">
+        <button class="play-again" onclick="playAgain()" hidden>Play Again</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- Script -->
+  <script src="shuffle.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
